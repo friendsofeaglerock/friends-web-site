@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friends of Eagle Rock Library | Supporting Our Community</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'script': ['Dancing Script', 'cursive'],
+                        'deco': ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'gold': {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                        },
+                        'copper': {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
+                        },
+                        'emerald-deco': {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        }
+                    },
+                    animation: {
+                        'gradient': 'gradient 8s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s ease-in-out infinite alternate',
+                        'bounce-subtle': 'bounce-subtle 3s ease-in-out infinite',
+                        'art-deco': 'art-deco 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { transform: 'scale(1)', 'box-shadow': '0 0 20px rgba(212, 175, 55, 0.4)' },
+                            '50%': { transform: 'scale(1.05)', 'box-shadow': '0 0 30px rgba(212, 175, 55, 0.6)' }
+                        },
+                        shimmer: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(100%)' }
+                        },
+                        'bounce-subtle': {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-5px)' }
+                        },
+                        'art-deco': {
+                            '0%, 100%': { transform: 'rotate(-2deg) scale(1)' },
+                            '50%': { transform: 'rotate(2deg) scale(1.02)' }
+                        }
+                    },
+                    backdropBlur: {
+                        xs: '2px',
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+</head>
+<body class="font-inter min-h-screen bg-gradient-to-br from-slate-900 via-amber-900 to-emerald-900 bg-[length:400%_400%] animate-gradient relative overflow-x-hidden">
+    
+    <!-- Art Deco Background Pattern -->
+    <div class="fixed inset-0 opacity-10 pointer-events-none">
+        <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(212, 175, 55, 0.1) 2px, rgba(212, 175, 55, 0.1) 4px);"></div>
+    </div>
+    
+    <!-- Background overlay -->
+    <div class="fixed inset-0 bg-gradient-to-br from-gold-900/30 via-copper-800/20 to-emerald-deco-800/30 pointer-events-none"></div>
+    
+    <!-- Header in Upper Left with Image -->
+    <header class="fixed top-0 left-0 z-50 p-8">
+        <div class="bg-gradient-to-r from-gold-400 to-gold-600 p-4 rounded-tr-3xl rounded-bl-3xl shadow-2xl relative overflow-hidden border-2 border-gold-700">
+            <!-- Art Deco geometric pattern -->
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-gold-800 to-transparent"></div>
+                <div class="absolute bottom-0 right-0 w-full h-2 bg-gradient-to-r from-transparent via-gold-800 to-transparent"></div>
+                <div class="absolute top-0 right-0 w-2 h-full bg-gradient-to-b from-transparent via-gold-800 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 w-2 h-full bg-gradient-to-b from-transparent via-gold-800 to-transparent"></div>
+            </div>
+            
+            <div class="relative z-10">
+                <h1 class="font-script text-2xl md:text-3xl font-bold text-slate-900 leading-tight">
+                    Friends of the <a href="https://www.lapl.org/branches/eagle-rock" target="_blank" class="hover:text-copper-700 transition-colors duration-200 underline decoration-gold-600 decoration-2 underline-offset-2">Eagle Rock Library</a>
+                </h1>
+                <div class="text-xs text-slate-700 font-medium mt-1">
+                    Supporting our library since 1995
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <div class="relative z-10 max-w-5xl mx-auto px-6 mb-16 mt-32">
+        <div class="bg-gradient-to-br from-gold-50 to-amber-50 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden border-4 border-gold-400">
+            
+            <!-- Decorative Art Deco sunburst -->
+            <div class="absolute top-6 right-6 text-8xl opacity-10 text-gold-600">📚</div>
+            
+            <div class="relative z-10 text-center">
+                <!-- Event badge -->
+                <div class="inline-block bg-gradient-to-r from-copper-600 to-copper-700 text-gold-100 px-8 py-3 font-deco font-bold uppercase tracking-[0.15em] text-sm mb-6 transform -skew-x-12 shadow-lg">
+                    <span class="inline-block transform skew-x-12">Exclusive Literary Event</span>
+                </div>
+                
+                <!-- Main heading -->
+                <h2 class="font-deco text-3xl md:text-6xl font-black bg-gradient-to-r from-copper-700 via-copper-600 to-gold-600 bg-clip-text text-transparent mb-8 leading-tight">
+                    GRAND BOOK SALE
+                </h2>
+                
+                <div class="w-24 h-1 bg-gradient-to-r from-gold-400 to-copper-500 mx-auto mb-8"></div>
+                
+                <!-- Date display -->
+                <div class="flex flex-col lg:flex-row items-center justify-center gap-8 mb-8">
+                    <!-- Calendar widget with Art Deco styling -->
+                    <div class="bg-gradient-to-br from-gold-100 to-amber-100 p-6 shadow-2xl border-2 border-gold-400 relative" style="clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);">
+                        <div class="absolute top-0 left-0 w-3 h-3 bg-gold-500"></div>
+                        <div class="absolute bottom-0 right-0 w-3 h-3 bg-gold-500"></div>
+                        
+                        <div class="text-center text-copper-700 font-deco font-bold uppercase tracking-wide text-sm mb-4">October 2025</div>
+                        <div class="grid grid-cols-7 gap-1 text-sm">
+                            <!-- Weekday headers -->
+                            <div class="text-copper-600 font-deco font-semibold text-xs p-2">Sun</div>
+                            <div class="text-copper-600 font-deco font-semibold text-xs p-2">Mon</div>
+                            <div class="text-copper-600 font-deco font-semibold text-xs p-2">Tue</div>
+                            <div class="text-copper-600 font-deco font-semibold text-xs p-2">Wed</div>
+                            <div class="text-copper-600 font-deco font-semibold text-xs p-2">Thu</div>
+                            <div class="text-copper-600 font-deco font-semibold text-xs p-2">Fri</div>
+                            <div class="text-copper-600 font-deco font-semibold text-xs p-2">Sat</div>
+                            
+                            <!-- Previous month -->
+                            <div class="text-gray-400 p-2 text-center">28</div>
+                            <div class="text-gray-400 p-2 text-center">29</div>
+                            <div class="text-gray-400 p-2 text-center">30</div>
+                            
+                            <!-- October dates -->
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">1</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">2</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">3</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">4</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">5</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">6</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">7</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">8</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">9</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">10</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">11</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">12</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">13</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">14</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">15</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">16</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">17</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">18</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">19</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">20</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">21</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">22</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">23</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">24</div>
+                            <div class="bg-gradient-to-r from-copper-600 to-copper-700 text-gold-100 p-2 text-center font-bold animate-pulse-glow transform scale-110 shadow-lg">25</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">26</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">27</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">28</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">29</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">30</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">31</div>
+                            
+                            <!-- Next month -->
+                            <div class="text-gray-400 p-2 text-center">1</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Date pill with Art Deco styling -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-gradient-to-r from-copper-600 to-copper-700 text-gold-100 px-12 py-8 font-deco text-2xl font-bold shadow-2xl animate-pulse-glow transform -skew-x-12 border-2 border-gold-400 mb-4">
+                            <div class="transform skew-x-12">
+                                <div class="text-xs uppercase tracking-widest">October</div>
+                                <div class="text-4xl font-black">25</div>
+                                <div class="text-sm">2025</div>
+                            </div>
+                        </div>
+                        
+                        <!-- Address link to Google Maps -->
+                        <a href="https://maps.google.com/?q=5027+Caspar+Ave,+Los+Angeles,+CA+90041" 
+                           target="_blank" 
+                           class="text-copper-700 font-medium hover:text-copper-900 transition-colors duration-200 underline decoration-gold-600 decoration-2 underline-offset-2 flex items-center gap-1">
+                            📍 5027 Caspar Ave, Los Angeles, CA 90041
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Description -->
+                <p class="font-deco text-xl text-slate-700 mb-4 italic">
+                    "An Extraordinary Collection Awaits Distinguished Readers"
+                </p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Feature Cards with Art Deco styling -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 mb-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Mission Card -->
+            <div class="group bg-gradient-to-br from-gold-50 to-amber-50 backdrop-blur-xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden border-l-4 border-t-4 border-gold-400">
+                <div class="absolute top-0 right-0 w-0 h-0 border-l-[30px] border-t-[30px] border-l-transparent border-t-gold-400"></div>
+                <div class="absolute bottom-0 left-0 w-0 h-0 border-r-[30px] border-b-[30px] border-r-transparent border-b-gold-400"></div>
+                
+                <div class="relative z-10">
+                    <div class="text-5xl mb-6 text-copper-600">⚡</div>
+                    <h3 class="font-deco text-2xl font-bold bg-gradient-to-r from-copper-700 to-gold-600 bg-clip-text text-transparent mb-4 uppercase tracking-wide">
+                        Our Mission
+                    </h3>
+                    <div class="w-12 h-1 bg-gradient-to-r from-gold-400 to-copper-500 mb-4"></div>
+                    <p class="text-slate-700 leading-relaxed font-medium">
+                        We support the Eagle Rock Library through community fundraising and book sales. Our goal is to help maintain and expand library programs for our neighborhood.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Elite Membership Card -->
+            <div class="group bg-gradient-to-br from-emerald-deco-50 to-emerald-deco-100 backdrop-blur-xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden border-l-4 border-t-4 border-emerald-deco-500">
+                <div class="absolute top-0 right-0 w-0 h-0 border-l-[30px] border-t-[30px] border-l-transparent border-t-emerald-deco-500"></div>
+                <div class="absolute bottom-0 left-0 w-0 h-0 border-r-[30px] border-b-[30px] border-r-transparent border-b-emerald-deco-500"></div>
+                
+                <div class="relative z-10">
+                    <div class="text-5xl mb-6 text-copper-600">🏆</div>
+                    <h3 class="font-deco text-2xl font-bold bg-gradient-to-r from-emerald-deco-700 to-gold-600 bg-clip-text text-transparent mb-4 uppercase tracking-wide">
+                        Elite Membership
+                    </h3>
+                    <div class="w-12 h-1 bg-gradient-to-r from-emerald-deco-500 to-gold-400 mb-4"></div>
+                    <p class="text-slate-700 leading-relaxed font-medium">
+                        Join our distinguished circle of cultural patrons. From historic Eagle Rock to the modern metropolis, we unite generations through literary excellence.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Patron Excellence Card -->
+            <div class="group bg-gradient-to-br from-copper-50 to-copper-100 backdrop-blur-xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden border-l-4 border-t-4 border-copper-500 md:col-span-2 lg:col-span-1">
+                <div class="absolute top-0 right-0 w-0 h-0 border-l-[30px] border-t-[30px] border-l-transparent border-t-copper-500"></div>
+                <div class="absolute bottom-0 left-0 w-0 h-0 border-r-[30px] border-b-[30px] border-r-transparent border-b-copper-500"></div>
+                
+                <div class="relative z-10">
+                    <div class="text-5xl mb-6 text-gold-600">💎</div>
+                    <h3 class="font-deco text-2xl font-bold bg-gradient-to-r from-copper-700 to-gold-600 bg-clip-text text-transparent mb-4 uppercase tracking-wide">
+                        Patron Excellence
+                    </h3>
+                    <div class="w-12 h-1 bg-gradient-to-r from-copper-500 to-gold-400 mb-4"></div>
+                    <p class="text-slate-700 leading-relaxed font-medium mb-6">
+                        Every contribution directly enriches our literary sanctuary. We maintain the highest standards of stewardship and transparency in all our endeavors.
+                    </p>
+                    <a href="mailto:friendsofeaglerock@gmail.com?subject=Becoming%20a%20Patron&body=Hello,%0A%0AI%20am%20interested%20in%20becoming%20a%20patron%20of%20the%20Friends%20of%20the%20Eagle%20Rock%20Library.%20Please%20provide%20more%20information%20about%20patronage%20opportunities.%0A%0AThank%20you!" 
+                       class="inline-flex items-center bg-gradient-to-r from-copper-600 to-copper-700 text-gold-100 px-8 py-3 font-deco font-bold hover:-translate-y-1 transition-transform duration-200 shadow-lg hover:shadow-xl group transform -skew-x-12 border border-gold-400">
+                        <span class="transform skew-x-12 flex items-center">
+                            Become a Patron
+                            <div class="ml-3 group-hover:translate-x-1 transition-transform">💎</div>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Simple Footer -->
+    <footer class="relative bg-gradient-to-b from-slate-900 to-black backdrop-blur-xl text-gold-100 py-8 mt-20 border-t-4 border-gold-400">
+        <div class="relative z-10 max-w-5xl mx-auto text-center px-6">
+            <p class="font-deco text-lg">
+                © MMXXV Friends of the Eagle Rock Library
+                <span class="font-inter text-sm text-gold-400 ml-4">Supporting our library since 1995</span>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
