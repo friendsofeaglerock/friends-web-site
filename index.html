@@ -4,583 +4,308 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Friends of Eagle Rock Library | Supporting Our Community</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800;900&display=swap');
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #ffd6ff 100%);
-            min-height: 100vh;
-            color: #1a1a2e;
-            overflow-x: hidden;
-        }
-        
-        /* Animated gradient background */
-        body::before {
-            content: "";
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, 
-                #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, 
-                #ffeaa7, #dfe6e9, #fd79a8, #a29bfe);
-            background-size: 400% 400%;
-            animation: gradientShift 15s ease infinite;
-            opacity: 0.3;
-            z-index: -1;
-        }
-        
-        @keyframes gradientShift {
-            0% { transform: translate(0, 0); }
-            25% { transform: translate(-50%, 0); }
-            50% { transform: translate(-50%, -50%); }
-            75% { transform: translate(0, -50%); }
-            100% { transform: translate(0, 0); }
-        }
-        
-        header {
-            padding: 2rem;
-            text-align: center;
-            position: relative;
-            z-index: 10;
-        }
-        
-        .logo {
-            font-size: 3rem;
-            font-weight: 900;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            display: inline-block;
-            margin-bottom: 0.5rem;
-            animation: float 3s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-10px); }
-        }
-        
-        .tagline {
-            font-size: 1.2rem;
-            font-weight: 300;
-            color: #333;
-            letter-spacing: 0.05em;
-        }
-        
-        .emoji-badge {
-            display: inline-block;
-            background: rgba(255,255,255,0.9);
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            margin: 0.5rem;
-            font-size: 0.9rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-        }
-        
-        /* Hero Section with Book Sale */
-        .hero-section {
-            background: rgba(255,255,255,0.95);
-            backdrop-filter: blur(10px);
-            border-radius: 30px;
-            padding: 3rem;
-            margin: 2rem auto;
-            max-width: 900px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .hero-section::before {
-            content: "🚀";
-            position: absolute;
-            font-size: 10rem;
-            opacity: 0.05;
-            right: -2rem;
-            top: -2rem;
-            transform: rotate(-15deg);
-        }
-        
-        .mega-announcement {
-            text-align: center;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .mega-announcement h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .date-pill {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1.5rem 3rem;
-            border-radius: 50px;
-            font-size: 1.8rem;
-            font-weight: 700;
-            margin: 1rem 0;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5);
-            animation: pulse 2s infinite;
-            position: relative;
-        }
-        
-        @keyframes pulse {
-            0% { transform: scale(1); box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5); }
-            50% { transform: scale(1.05); box-shadow: 0 15px 40px rgba(102, 126, 234, 0.7); }
-            100% { transform: scale(1); box-shadow: 0 10px 30px rgba(102, 126, 234, 0.5); }
-        }
-        
-        .date-display {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 2rem;
-            margin: 1rem 0;
-        }
-        
-        .calendar-widget {
-            background: white;
-            border-radius: 15px;
-            padding: 1.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            text-align: center;
-            min-width: 120px;
-        }
-        
-        .calendar-month {
-            font-size: 1rem;
-            font-weight: 600;
-            color: #667eea;
-            margin-bottom: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .calendar-day {
-            font-size: 3rem;
-            font-weight: 900;
-            color: #1a1a2e;
-            line-height: 1;
-        }
-        
-        .full-calendar {
-            background: white;
-            border-radius: 15px;
-            padding: 1.5rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            margin: 0 1rem;
-        }
-        
-        .calendar-header {
-            text-align: center;
-            font-weight: 600;
-            color: #667eea;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .calendar-grid {
-            display: grid;
-            grid-template-columns: repeat(7, 1fr);
-            gap: 0.3rem;
-            text-align: center;
-        }
-        
-        .calendar-weekday {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: #999;
-            padding: 0.5rem 0;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-        
-        .calendar-date {
-            aspect-ratio: 1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.9rem;
-            border-radius: 8px;
-            transition: all 0.2s ease;
-        }
-        
-        .calendar-date.other-month {
-            color: #ccc;
-        }
-        
-        .calendar-date.today {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            font-weight: 700;
-            transform: scale(1.1);
-            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-        }
-        
-        .calendar-date.sale-day {
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            color: white;
-            font-weight: 700;
-            transform: scale(1.1);
-            box-shadow: 0 5px 15px rgba(240, 147, 251, 0.4);
-            animation: pulse-glow 2s infinite;
-        }
-        
-        @keyframes pulse-glow {
-            0%, 100% { 
-                box-shadow: 0 5px 15px rgba(240, 147, 251, 0.4);
-                transform: scale(1.1);
-            }
-            50% { 
-                box-shadow: 0 8px 25px rgba(240, 147, 251, 0.6);
-                transform: scale(1.15);
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        'inter': ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        'script': ['Dancing Script', 'cursive'],
+                        'deco': ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        'gold': {
+                            50: '#fffbeb',
+                            100: '#fef3c7',
+                            200: '#fde68a',
+                            300: '#fcd34d',
+                            400: '#fbbf24',
+                            500: '#f59e0b',
+                            600: '#d97706',
+                            700: '#b45309',
+                            800: '#92400e',
+                            900: '#78350f',
+                        },
+                        'copper': {
+                            50: '#fdf2f8',
+                            100: '#fce7f3',
+                            200: '#fbcfe8',
+                            300: '#f9a8d4',
+                            400: '#f472b6',
+                            500: '#ec4899',
+                            600: '#db2777',
+                            700: '#be185d',
+                            800: '#9d174d',
+                            900: '#831843',
+                        },
+                        'emerald-deco': {
+                            50: '#ecfdf5',
+                            100: '#d1fae5',
+                            200: '#a7f3d0',
+                            300: '#6ee7b7',
+                            400: '#34d399',
+                            500: '#10b981',
+                            600: '#059669',
+                            700: '#047857',
+                            800: '#065f46',
+                            900: '#064e3b',
+                        }
+                    },
+                    animation: {
+                        'gradient': 'gradient 8s ease infinite',
+                        'float': 'float 6s ease-in-out infinite',
+                        'pulse-glow': 'pulse-glow 2s ease-in-out infinite',
+                        'shimmer': 'shimmer 2s ease-in-out infinite alternate',
+                        'bounce-subtle': 'bounce-subtle 3s ease-in-out infinite',
+                        'art-deco': 'art-deco 4s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        gradient: {
+                            '0%, 100%': { 'background-position': '0% 50%' },
+                            '50%': { 'background-position': '100% 50%' }
+                        },
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        },
+                        'pulse-glow': {
+                            '0%, 100%': { transform: 'scale(1)', 'box-shadow': '0 0 20px rgba(212, 175, 55, 0.4)' },
+                            '50%': { transform: 'scale(1.05)', 'box-shadow': '0 0 30px rgba(212, 175, 55, 0.6)' }
+                        },
+                        shimmer: {
+                            '0%': { transform: 'translateX(-100%)' },
+                            '100%': { transform: 'translateX(100%)' }
+                        },
+                        'bounce-subtle': {
+                            '0%, 100%': { transform: 'translateY(0px)' },
+                            '50%': { transform: 'translateY(-5px)' }
+                        },
+                        'art-deco': {
+                            '0%, 100%': { transform: 'rotate(-2deg) scale(1)' },
+                            '50%': { transform: 'rotate(2deg) scale(1.02)' }
+                        }
+                    },
+                    backdropBlur: {
+                        xs: '2px',
+                    }
+                }
             }
         }
-        
-        /* Feature Cards */
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-            max-width: 1200px;
-            margin: 3rem auto;
-            padding: 0 2rem;
-        }
-        
-        .feature-card {
-            background: rgba(255,255,255,0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
-            padding: 2rem;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .feature-card::before {
-            content: "";
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(102,126,234,0.1) 0%, transparent 70%);
-            animation: rotate 20s linear infinite;
-        }
-        
-        @keyframes rotate {
-            from { transform: rotate(0deg); }
-            to { transform: rotate(360deg); }
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-        }
-        
-        .feature-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            animation: bounce 2s infinite;
-            animation-delay: calc(var(--delay) * 0.1s);
-        }
-        
-        @keyframes bounce {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 1rem 2.5rem;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.1rem;
-            margin: 1rem 0;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 20px rgba(102, 126, 234, 0.4);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-button::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
-            transition: left 0.5s ease;
-        }
-        
-        .cta-button:hover::before {
-            left: 100%;
-        }
-        
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.6);
-        }
-        
-        /* Stats Section */
-        .stats-section {
-            background: rgba(255,255,255,0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 30px;
-            padding: 3rem;
-            margin: 3rem auto;
-            max-width: 900px;
-            text-align: center;
-        }
-        
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .stat {
-            padding: 1rem;
-        }
-        
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
-            color: #666;
-            margin-top: 0.5rem;
-        }
-        
-        footer {
-            background: rgba(26, 26, 46, 0.95);
-            color: white;
-            padding: 3rem 2rem;
-            margin-top: 5rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        footer::before {
-            content: "📚";
-            position: absolute;
-            font-size: 15rem;
-            opacity: 0.05;
-            left: 50%;
-            top: 50%;
-            transform: translate(-50%, -50%);
-        }
-        
-        .footer-content {
-            position: relative;
-            z-index: 1;
-        }
-        
-        
-        .badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
-            color: #2d3436;
-            padding: 0.3rem 1rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            font-weight: 600;
-            margin: 0.5rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-    </style>
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400;500;600;700;800;900&family=Dancing+Script:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
-<body>
+<body class="font-inter min-h-screen bg-gradient-to-br from-slate-900 via-amber-900 to-emerald-900 bg-[length:400%_400%] animate-gradient relative overflow-x-hidden">
     
-    <header>
-        <h1 class="logo">Friends of Eagle Rock Library</h1>
-        <p class="tagline"><span class="emoji-badge">🦅 Eagle Rock</span> Supporting Our Eagle Rock Library Since 1995</p>
+    <!-- Art Deco Background Pattern -->
+    <div class="fixed inset-0 opacity-10 pointer-events-none">
+        <div class="absolute inset-0" style="background-image: repeating-linear-gradient(45deg, transparent, transparent 2px, rgba(212, 175, 55, 0.1) 2px, rgba(212, 175, 55, 0.1) 4px);"></div>
+    </div>
+    
+    <!-- Background overlay -->
+    <div class="fixed inset-0 bg-gradient-to-br from-gold-900/30 via-copper-800/20 to-emerald-deco-800/30 pointer-events-none"></div>
+    
+    <!-- Header in Upper Left with Image -->
+    <header class="fixed top-0 left-0 z-50 p-8">
+        <div class="bg-gradient-to-r from-gold-400 to-gold-600 p-4 rounded-tr-3xl rounded-bl-3xl shadow-2xl relative overflow-hidden border-2 border-gold-700">
+            <!-- Art Deco geometric pattern -->
+            <div class="absolute inset-0 opacity-20">
+                <div class="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-transparent via-gold-800 to-transparent"></div>
+                <div class="absolute bottom-0 right-0 w-full h-2 bg-gradient-to-r from-transparent via-gold-800 to-transparent"></div>
+                <div class="absolute top-0 right-0 w-2 h-full bg-gradient-to-b from-transparent via-gold-800 to-transparent"></div>
+                <div class="absolute bottom-0 left-0 w-2 h-full bg-gradient-to-b from-transparent via-gold-800 to-transparent"></div>
+            </div>
+            
+            <div class="relative z-10">
+                <h1 class="font-script text-2xl md:text-3xl font-bold text-slate-900 leading-tight">
+                    Friends of the <a href="https://www.lapl.org/branches/eagle-rock" target="_blank" class="hover:text-copper-700 transition-colors duration-200 underline decoration-gold-600 decoration-2 underline-offset-2">Eagle Rock Library</a>
+                </h1>
+                <div class="text-xs text-slate-700 font-medium mt-1">
+                    Supporting our library since 1995
+                </div>
+            </div>
+        </div>
     </header>
     
-    <div class="hero-section">
-        <div class="mega-announcement">
-            <div class="badge">LIMITED TIME EVENT</div>
-            <h2>🎉 MEGA BOOK SALE INCOMING!</h2>
-            <div class="date-display">
-                <div class="full-calendar">
-                    <div class="calendar-header">October 2025</div>
-                    <div class="calendar-grid">
-                        <!-- Weekday headers -->
-                        <div class="calendar-weekday">Sun</div>
-                        <div class="calendar-weekday">Mon</div>
-                        <div class="calendar-weekday">Tue</div>
-                        <div class="calendar-weekday">Wed</div>
-                        <div class="calendar-weekday">Thu</div>
-                        <div class="calendar-weekday">Fri</div>
-                        <div class="calendar-weekday">Sat</div>
+    <!-- Hero Section -->
+    <div class="relative z-10 max-w-5xl mx-auto px-6 mb-16 mt-32">
+        <div class="bg-gradient-to-br from-gold-50 to-amber-50 backdrop-blur-xl rounded-3xl p-8 md:p-12 shadow-2xl relative overflow-hidden border-4 border-gold-400">
+            
+            <!-- Decorative Art Deco sunburst -->
+            <div class="absolute top-6 right-6 text-8xl opacity-10 text-gold-600">📚</div>
+            
+            <div class="relative z-10 text-center">
+                <!-- Event badge -->
+                <div class="inline-block bg-gradient-to-r from-copper-600 to-copper-700 text-gold-100 px-8 py-3 font-deco font-bold uppercase tracking-[0.15em] text-sm mb-6 transform -skew-x-12 shadow-lg">
+                    <span class="inline-block transform skew-x-12">Exclusive Literary Event</span>
+                </div>
+                
+                <!-- Main heading -->
+                <h2 class="font-deco text-3xl md:text-6xl font-black bg-gradient-to-r from-copper-700 via-copper-600 to-gold-600 bg-clip-text text-transparent mb-8 leading-tight">
+                    GRAND BOOK SALE
+                </h2>
+                
+                <div class="w-24 h-1 bg-gradient-to-r from-gold-400 to-copper-500 mx-auto mb-8"></div>
+                
+                <!-- Date display -->
+                <div class="flex flex-col lg:flex-row items-center justify-center gap-8 mb-8">
+                    <!-- Calendar widget with Art Deco styling -->
+                    <div class="bg-gradient-to-br from-gold-100 to-amber-100 p-6 shadow-2xl border-2 border-gold-400 relative" style="clip-path: polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px);">
+                        <div class="absolute top-0 left-0 w-3 h-3 bg-gold-500"></div>
+                        <div class="absolute bottom-0 right-0 w-3 h-3 bg-gold-500"></div>
                         
-                        <!-- Previous month dates -->
-                        <div class="calendar-date other-month">28</div>
-                        <div class="calendar-date other-month">29</div>
-                        <div class="calendar-date other-month">30</div>
+                        <div class="text-center text-copper-700 font-deco font-bold uppercase tracking-wide text-sm mb-4">October 2025</div>
+                        <div class="grid grid-cols-7 gap-1 text-sm">
+                            <!-- Weekday headers -->
+                            <div class="text-copper-600 font-deco font-semibold text-xs p-2">Sun</div>
+                            <div class="text-copper-600 font-deco font-semibold text-xs p-2">Mon</div>
+                            <div class="text-copper-600 font-deco font-semibold text-xs p-2">Tue</div>
+                            <div class="text-copper-600 font-deco font-semibold text-xs p-2">Wed</div>
+                            <div class="text-copper-600 font-deco font-semibold text-xs p-2">Thu</div>
+                            <div class="text-copper-600 font-deco font-semibold text-xs p-2">Fri</div>
+                            <div class="text-copper-600 font-deco font-semibold text-xs p-2">Sat</div>
+                            
+                            <!-- Previous month -->
+                            <div class="text-gray-400 p-2 text-center">28</div>
+                            <div class="text-gray-400 p-2 text-center">29</div>
+                            <div class="text-gray-400 p-2 text-center">30</div>
+                            
+                            <!-- October dates -->
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">1</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">2</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">3</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">4</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">5</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">6</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">7</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">8</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">9</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">10</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">11</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">12</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">13</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">14</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">15</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">16</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">17</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">18</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">19</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">20</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">21</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">22</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">23</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">24</div>
+                            <div class="bg-gradient-to-r from-copper-600 to-copper-700 text-gold-100 p-2 text-center font-bold animate-pulse-glow transform scale-110 shadow-lg">25</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">26</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">27</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">28</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">29</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">30</div>
+                            <div class="p-2 text-center hover:bg-gold-200 transition-colors">31</div>
+                            
+                            <!-- Next month -->
+                            <div class="text-gray-400 p-2 text-center">1</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Date pill with Art Deco styling -->
+                    <div class="flex flex-col items-center">
+                        <div class="bg-gradient-to-r from-copper-600 to-copper-700 text-gold-100 px-12 py-8 font-deco text-2xl font-bold shadow-2xl animate-pulse-glow transform -skew-x-12 border-2 border-gold-400 mb-4">
+                            <div class="transform skew-x-12">
+                                <div class="text-xs uppercase tracking-widest">October</div>
+                                <div class="text-4xl font-black">25</div>
+                                <div class="text-sm">2025</div>
+                            </div>
+                        </div>
                         
-                        <!-- October dates -->
-                        <div class="calendar-date">1</div>
-                        <div class="calendar-date">2</div>
-                        <div class="calendar-date">3</div>
-                        <div class="calendar-date">4</div>
-                        <div class="calendar-date">5</div>
-                        <div class="calendar-date">6</div>
-                        <div class="calendar-date">7</div>
-                        <div class="calendar-date">8</div>
-                        <div class="calendar-date">9</div>
-                        <div class="calendar-date">10</div>
-                        <div class="calendar-date">11</div>
-                        <div class="calendar-date">12</div>
-                        <div class="calendar-date">13</div>
-                        <div class="calendar-date">14</div>
-                        <div class="calendar-date">15</div>
-                        <div class="calendar-date">16</div>
-                        <div class="calendar-date">17</div>
-                        <div class="calendar-date">18</div>
-                        <div class="calendar-date">19</div>
-                        <div class="calendar-date">20</div>
-                        <div class="calendar-date">21</div>
-                        <div class="calendar-date">22</div>
-                        <div class="calendar-date">23</div>
-                        <div class="calendar-date">24</div>
-                        <div class="calendar-date sale-day">25</div>
-                        <div class="calendar-date">26</div>
-                        <div class="calendar-date">27</div>
-                        <div class="calendar-date">28</div>
-                        <div class="calendar-date">29</div>
-                        <div class="calendar-date">30</div>
-                        <div class="calendar-date">31</div>
-                        
-                        <!-- Next month date -->
-                        <div class="calendar-date other-month">1</div>
+                        <!-- Address link to Google Maps -->
+                        <a href="https://maps.google.com/?q=5027+Caspar+Ave,+Los+Angeles,+CA+90041" 
+                           target="_blank" 
+                           class="text-copper-700 font-medium hover:text-copper-900 transition-colors duration-200 underline decoration-gold-600 decoration-2 underline-offset-2 flex items-center gap-1">
+                            📍 5027 Caspar Ave, Los Angeles, CA 90041
+                        </a>
                     </div>
                 </div>
-                <div class="date-pill">October 25, 2025</div>
-            </div>
-            <p style="font-size: 1.2rem; margin: 1rem 0; color: #666;">
-                Join fellow book lovers for our popular quarterly sale!
-            </p>
-            <p style="color: #999;">📍 5027 Caspar Ave, Los Angeles, CA 90041</p>
-        </div>
-    </div>
-    
-    <div class="features">
-        <div class="feature-card" style="--delay: 0;">
-            <div class="feature-icon">🎯</div>
-            <h3>Our Mission</h3>
-            <p>We support the Eagle Rock Library through community fundraising and book sales. Our goal is to help maintain and expand library programs for our neighborhood.</p>
-        </div>
-        
-        <div class="feature-card" style="--delay: 2;">
-            <div class="feature-icon">🌟</div>
-            <h3>Why We're Special</h3>
-            <p>We're a dedicated group of neighbors who believe in the power of our local library. Together, we organize events and fundraisers to keep our community resource thriving.</p>
-        </div>
-        
-        <div class="feature-card" style="--delay: 4;">
-            <div class="feature-icon">🚀</div>
-            <h3>Join Our Community</h3>
-            <p>Be part of something meaningful. Our volunteers help with book sales, events, and programs that directly benefit the Eagle Rock Library and our neighbors.</p>
-        </div>
-    </div>
-    
-    <div class="stats-section">
-        <h2 style="font-size: 2rem; margin-bottom: 1rem;">Our Impact</h2>
-        <div class="stats-grid">
-            <div class="stat">
-                <div class="stat-number">10K+</div>
-                <div class="stat-label">Books Sold</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">500+</div>
-                <div class="stat-label">Active Members</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">2x</div>
-                <div class="stat-label">Annual Sales</div>
-            </div>
-            <div class="stat">
-                <div class="stat-number">100%</div>
-                <div class="stat-label">Community Love</div>
-            </div>
-        </div>
-    </div>
-    
-    <div class="features">
-        <div class="feature-card" style="background: linear-gradient(135deg, rgba(102,126,234,0.1) 0%, rgba(118,75,162,0.1) 100%);">
-            <div class="feature-icon">💰</div>
-            <h3>Transparent Funding</h3>
-            <p>Every dollar we raise goes directly to library programs and resources. We believe in complete transparency about how your contributions are used.</p>
-            <a href="#" class="cta-button">View Our Impact →</a>
-        </div>
-        
-        <div class="feature-card" style="background: linear-gradient(135deg, rgba(240,147,251,0.1) 0%, rgba(245,87,108,0.1) 100%);">
-            <div class="feature-icon">🤝</div>
-            <h3>Community Powered</h3>
-            <p>From the historic Eagle Rock to modern LA, we're uniting generations through the power of books.</p>
-            <a href="#" class="cta-button">Join Our Team →</a>
-        </div>
-    </div>
-    
-    <footer>
-        <div class="footer-content">
-            <h2 style="font-size: 2rem; margin-bottom: 1rem;">Ready to Support Your Library?</h2>
-            <p style="margin-bottom: 2rem;">Join our community of book lovers and library supporters.</p>
-            <a href="#" class="cta-button" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                Start Your Journey Today
-            </a>
-            <div style="margin-top: 3rem; opacity: 0.7;">
-                <p>© 2025 Friends of the Eagle Rock Library</p>
-                <p>Proudly Supporting Eagle Rock Library</p>
-                <p style="margin-top: 1rem;">
-                    <span class="badge" style="background: rgba(255,255,255,0.2); color: white;">Eagle Rock</span>
-                    <span class="badge" style="background: rgba(255,255,255,0.2); color: white;">Los Angeles</span>
-                    <span class="badge" style="background: rgba(255,255,255,0.2); color: white;">90065</span>
+                
+                <!-- Description -->
+                <p class="font-deco text-xl text-slate-700 mb-4 italic">
+                    "An Extraordinary Collection Awaits Distinguished Readers"
                 </p>
             </div>
+        </div>
+    </div>
+    
+    <!-- Feature Cards with Art Deco styling -->
+    <div class="relative z-10 max-w-7xl mx-auto px-6 mb-16">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Mission Card -->
+            <div class="group bg-gradient-to-br from-gold-50 to-amber-50 backdrop-blur-xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden border-l-4 border-t-4 border-gold-400">
+                <div class="absolute top-0 right-0 w-0 h-0 border-l-[30px] border-t-[30px] border-l-transparent border-t-gold-400"></div>
+                <div class="absolute bottom-0 left-0 w-0 h-0 border-r-[30px] border-b-[30px] border-r-transparent border-b-gold-400"></div>
+                
+                <div class="relative z-10">
+                    <div class="text-5xl mb-6 text-copper-600">⚡</div>
+                    <h3 class="font-deco text-2xl font-bold bg-gradient-to-r from-copper-700 to-gold-600 bg-clip-text text-transparent mb-4 uppercase tracking-wide">
+                        Our Mission
+                    </h3>
+                    <div class="w-12 h-1 bg-gradient-to-r from-gold-400 to-copper-500 mb-4"></div>
+                    <p class="text-slate-700 leading-relaxed font-medium">
+                        We support the Eagle Rock Library through community fundraising and book sales. Our goal is to help maintain and expand library programs for our neighborhood.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Elite Membership Card -->
+            <div class="group bg-gradient-to-br from-emerald-deco-50 to-emerald-deco-100 backdrop-blur-xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden border-l-4 border-t-4 border-emerald-deco-500">
+                <div class="absolute top-0 right-0 w-0 h-0 border-l-[30px] border-t-[30px] border-l-transparent border-t-emerald-deco-500"></div>
+                <div class="absolute bottom-0 left-0 w-0 h-0 border-r-[30px] border-b-[30px] border-r-transparent border-b-emerald-deco-500"></div>
+                
+                <div class="relative z-10">
+                    <div class="text-5xl mb-6 text-copper-600">🏆</div>
+                    <h3 class="font-deco text-2xl font-bold bg-gradient-to-r from-emerald-deco-700 to-gold-600 bg-clip-text text-transparent mb-4 uppercase tracking-wide">
+                        Elite Membership
+                    </h3>
+                    <div class="w-12 h-1 bg-gradient-to-r from-emerald-deco-500 to-gold-400 mb-4"></div>
+                    <p class="text-slate-700 leading-relaxed font-medium">
+                        Join our distinguished circle of cultural patrons. From historic Eagle Rock to the modern metropolis, we unite generations through literary excellence.
+                    </p>
+                </div>
+            </div>
+            
+            <!-- Patron Excellence Card -->
+            <div class="group bg-gradient-to-br from-copper-50 to-copper-100 backdrop-blur-xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-300 relative overflow-hidden border-l-4 border-t-4 border-copper-500 md:col-span-2 lg:col-span-1">
+                <div class="absolute top-0 right-0 w-0 h-0 border-l-[30px] border-t-[30px] border-l-transparent border-t-copper-500"></div>
+                <div class="absolute bottom-0 left-0 w-0 h-0 border-r-[30px] border-b-[30px] border-r-transparent border-b-copper-500"></div>
+                
+                <div class="relative z-10">
+                    <div class="text-5xl mb-6 text-gold-600">💎</div>
+                    <h3 class="font-deco text-2xl font-bold bg-gradient-to-r from-copper-700 to-gold-600 bg-clip-text text-transparent mb-4 uppercase tracking-wide">
+                        Patron Excellence
+                    </h3>
+                    <div class="w-12 h-1 bg-gradient-to-r from-copper-500 to-gold-400 mb-4"></div>
+                    <p class="text-slate-700 leading-relaxed font-medium mb-6">
+                        Every contribution directly enriches our literary sanctuary. We maintain the highest standards of stewardship and transparency in all our endeavors.
+                    </p>
+                    <a href="mailto:friendsofeaglerock@gmail.com?subject=Becoming%20a%20Patron&body=Hello,%0A%0AI%20am%20interested%20in%20becoming%20a%20patron%20of%20the%20Friends%20of%20the%20Eagle%20Rock%20Library.%20Please%20provide%20more%20information%20about%20patronage%20opportunities.%0A%0AThank%20you!" 
+                       class="inline-flex items-center bg-gradient-to-r from-copper-600 to-copper-700 text-gold-100 px-8 py-3 font-deco font-bold hover:-translate-y-1 transition-transform duration-200 shadow-lg hover:shadow-xl group transform -skew-x-12 border border-gold-400">
+                        <span class="transform skew-x-12 flex items-center">
+                            Become a Patron
+                            <div class="ml-3 group-hover:translate-x-1 transition-transform">💎</div>
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <!-- Simple Footer -->
+    <footer class="relative bg-gradient-to-b from-slate-900 to-black backdrop-blur-xl text-gold-100 py-8 mt-20 border-t-4 border-gold-400">
+        <div class="relative z-10 max-w-5xl mx-auto text-center px-6">
+            <p class="font-deco text-lg">
+                © MMXXV Friends of the Eagle Rock Library
+                <span class="font-inter text-sm text-gold-400 ml-4">Supporting our library since 1995</span>
+            </p>
         </div>
     </footer>
 </body>
